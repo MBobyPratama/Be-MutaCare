@@ -1,14 +1,17 @@
 import { Router } from 'express';
 import healthRoutes from './healthRoutes.js';
+import assessmentRoutes from './assessmentRoutes.js';
 
 const apiRouter = Router();
 
 // Health Check Endpoint
 apiRouter.use(healthRoutes);
 
+// Assessment & Therapy Plan Endpoints
+apiRouter.use('/assessments', assessmentRoutes);
+
 // Placeholder domain route groups (to be implemented per domain spec)
 // apiRouter.use('/users', userRoutes);
-// apiRouter.use('/assessments', assessmentRoutes);
 // apiRouter.use('/moods', moodRoutes);
 // apiRouter.use('/dashboard', dashboardRoutes);
 // apiRouter.use('/journey', journeyRoutes);
