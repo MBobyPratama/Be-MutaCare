@@ -8,8 +8,13 @@ import { logger } from './utils/logger.js';
 
 const app: Application = express();
 
-// Security Middlewares
-app.use(helmet());
+// Security Middlewares - Configure Helmet to allow Scalar API Reference CDN assets
+app.use(
+  helmet({
+    contentSecurityPolicy: false,
+    crossOriginEmbedderPolicy: false,
+  })
+);
 app.use(cors());
 
 // Body Parsers
