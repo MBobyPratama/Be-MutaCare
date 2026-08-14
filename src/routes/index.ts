@@ -3,6 +3,7 @@ import healthRoutes from './healthRoutes.js';
 import assessmentRoutes from './assessmentRoutes.js';
 import moodRoutes from './moodRoutes.js';
 import dashboardRoutes from './dashboardRoutes.js';
+import simulationRoutes from './simulationRoutes.js';
 
 const apiRouter = Router();
 
@@ -16,10 +17,12 @@ apiRouter.use('/assessments', assessmentRoutes);
 apiRouter.use('/moods', moodRoutes);
 apiRouter.use('/dashboard', dashboardRoutes);
 
+// Virtual Exposure Simulation Endpoints
+apiRouter.use('/simulations', simulationRoutes);
+
 // Placeholder domain route groups (to be implemented per domain spec)
 // apiRouter.use('/users', userRoutes);
 // apiRouter.use('/journey', journeyRoutes);
-// apiRouter.use('/simulations', simulationRoutes);
 // apiRouter.use('/reflections', reflectionRoutes);
 // apiRouter.use('/progress', progressRoutes);
 
